@@ -6,22 +6,21 @@ public class Sandbox {
         int gameNumber = Randomizer.randomNumber;
         System.out.println(gameNumber);
 
-        int playerNumber = Randomizer.randomNumber;
+        int playerNumber = Randomizer.randomNumber1;
         System.out.println(playerNumber);
 
-        while (gameNumber != playerNumber) {
+        while (gameNumber != playerNumber)
 
-            System.out.println(playerNumber + " This is me");
-            System.out.println(gameNumber + " This is game");
-            System.out.println("fail!!!");
+        System.out.println(playerNumber + " This is me");
+        System.out.println(gameNumber + " This is game");
+        System.out.println("fail!!!");
 
-            playerNumber = Randomizer.randomNumber;
-            System.out.println(playerNumber);
+        if (gameNumber == playerNumber) {
+            System.out.println(" Good Job!!!");
         }
-
-            if (gameNumber == playerNumber) {
-                System.out.println("GOODJOBBBBBBBB");
-            }
 
     }
 }
+            
+
+
