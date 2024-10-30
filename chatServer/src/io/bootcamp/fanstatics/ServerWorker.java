@@ -1,62 +1,65 @@
 package io.bootcamp.fanstatics;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.Socket;
+import java.util.List;
 
 public class ServerWorker implements Runnable {
 
     private final Server server;
     private final Socket clientSocket;
-    private OutputStream outputStream;
-
+    private PrintWriter out;
+    private List<ServerWorker> workerList;
     private String clientName;
 
     public ServerWorker(Server server, Socket clientSocket) {
         this.server = server;
         this.clientSocket = clientSocket;
+        this.workerList = workerList;
     }
 
     @Override
     public void run() {
+        String message;
         try {
-            this.outputStream = clientSocket.getOutputStream();
+            out = new PrintWriter(clientSocket.getOutputStream());
             BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
-            outputStream.write("Client name: ".getBytes());
-            outputStream.flush();
+            out.write("Client name: ");
+            out.flush();
             this.clientName = reader.readLine();
             System.out.println(clientName + " enter the chat!");
             server.broadcast(clientName + " enter the chat!", this);
 
-            String message;
             while ((message = reader.readLine()) != null) {
+                if (message.equalsIgnoreCase("List")) {
+                    sendClientList();
+                }
                 System.out.println(clientName + ": " + message);
                 server.broadcast(message, this);
             }
         } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                clientSocket.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            server.removeWorker(this);
-            System.out.println(clientName + " left the chat");
-            server.broadcast(clientName + " left the chat", this);
+            System.out.println("Connection error: " + e.getMessage());
         }
     }
 
+    private void sendClientList() {
+            StringBuilder clientNames = new StringBuilder("Connected clients:\n");
+            for (ServerWorker worker : workerList) {
+                clientNames.append(worker.clientName).append("\n");
+            }
+            out.println(clientNames);
+        }
+
     public void sendMessage(String message) {
-        try {
-            outputStream.write((message + "\n").getBytes());
-            outputStream.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
+        for (ServerWorker worker : workerList) {
+            if (worker != this) {
+                worker.out.println(message);
+            }
         }
     }
 }
+
+
+
 

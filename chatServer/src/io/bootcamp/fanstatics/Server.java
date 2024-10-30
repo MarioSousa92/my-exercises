@@ -26,7 +26,7 @@ public class Server {
                 Socket clientSocket = serverSocket.accept();
                 System.out.println("New client connect");
 
-                ServerWorker worker = new ServerWorker(this, clientSocket);
+                ServerWorker worker = new ServerWorker((Server) workerList, clientSocket);
                 synchronized (workerList) {
                     workerList.add(worker);
                 }
@@ -44,12 +44,6 @@ public class Server {
                     worker.sendMessage(message);
                 }
             }
-        }
-    }
-
-    public void removeWorker(ServerWorker serverWorker) {
-        synchronized (workerList) {
-           workerList.remove(this);
         }
     }
 }
