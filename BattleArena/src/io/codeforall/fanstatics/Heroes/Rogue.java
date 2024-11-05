@@ -1,16 +1,16 @@
 package io.codeforall.fanstatics.Heroes;
 
+import io.codeforall.fanstatics.Abilities.SneakAttack;
+
 public class Rogue extends Hero {
-    public Rogue(int health, int mana, int attack, int defense, String name, int ability) {
-        super(health, mana, attack, defense, name, ability);
 
-        Rogue rogue = new Rogue(health, mana, attack, defense, name, ability);
-        this.health = 200;
-        this.mana = 100;
-        this.attack = 75;
-        this.defense = 75;
-        this.name = "Savage";
-        this.ability = 120;
-
+    public Rogue() {
+        super(200,
+                100,
+                75,
+                75,
+                "Savage",
+                120,
+                120);
     }
 }
