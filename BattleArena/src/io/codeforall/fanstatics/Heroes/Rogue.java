@@ -7,10 +7,10 @@ public class Rogue extends Hero {
     public Rogue() {
         super(200,
                 100,
-                75,
-                75,
+                95,
+                30,
                 "Savage",
-                120,
-                120);
+                110,
+                110);
     }
 }

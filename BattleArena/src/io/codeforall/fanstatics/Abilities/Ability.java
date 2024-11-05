@@ -4,5 +4,5 @@ import io.codeforall.fanstatics.Heroes.Hero;
 
 public interface Ability {
 
-    public void use (Hero user, Hero target);
+    void use(Hero user, Hero target);
 }

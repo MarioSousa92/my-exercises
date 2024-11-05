@@ -7,10 +7,10 @@ public class Cleric extends Hero {
     public Cleric() {
         super(200,
                 100,
-                50,
-                100,
+                85,
+                30,
                 "Pope",
-                75,
-                75);
+                100,
+                100);
     }
 }

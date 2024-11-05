@@ -1,9 +1,6 @@
 package io.codeforall.fanstatics.Heroes;
 
-import io.codeforall.fanstatics.Abilities.FireBall;
-import io.codeforall.fanstatics.Abilities.Heal;
-import io.codeforall.fanstatics.Abilities.ShieldBlock;
-import io.codeforall.fanstatics.Abilities.SneakAttack;
+import io.codeforall.fanstatics.Abilities.*;
 
 public abstract class Hero {
     public int health;
@@ -22,15 +19,6 @@ public abstract class Hero {
         this.name = name;
         this.ability = ability;
         this.abilityPower = abilityPower;
-
-
-        public void useAbility(Hero target) {
-            if (canUseAbility()) {
-                ability.use(this, target);
-                mana -= abilityPower;
-
-            }
-        }
     }
 
     public void strike(Hero target) {
@@ -45,7 +33,7 @@ public abstract class Hero {
 
     public void useAbility(Hero target) {
         if (canUseAbility()) {
-            ability.use(this, target);
+            // ability.use(this, target);
             mana -= abilityPower;
             System.out.println(this.name + " used the ability " + ability + " on " + target.name + " .");
         }

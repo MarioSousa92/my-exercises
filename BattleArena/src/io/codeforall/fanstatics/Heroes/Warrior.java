@@ -7,10 +7,10 @@ public class Warrior extends Hero {
     public Warrior() {
         super(200,
                 100,
-                65,
-                85,
-                "Baba",
                 90,
-                90);
+                40,
+                "Baba",
+                120,
+                120);
     }
 }

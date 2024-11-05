@@ -8,7 +8,7 @@ public class Mage extends Hero {
         super(200,
                 100,
                 100,
-                50,
+                20,
                 "Merlin",
                 140,
                 140);
