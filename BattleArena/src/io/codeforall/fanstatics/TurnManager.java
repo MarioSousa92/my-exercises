@@ -37,7 +37,7 @@ public class TurnManager {
         System.out.println("\nStatus of the players after the round.");
         for (int i = 0; i < players.length; i++) {
             Hero player = players[i];
-            System.out.println(player.name + " received " + damageReceived[i] + " of damage, remaining health: " + player.health);
+            System.out.println(player.name + " received " + damageReceived[i] + " of damage, remaining health: " + player.health + " remaining mana:" + player.mana);
         }
         System.out.println("-----------");
     }

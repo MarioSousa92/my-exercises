@@ -32,8 +32,9 @@ public abstract class Hero {
     }
 
     public void useAbility(Hero target) {
-        if (canUseAbility()) {
-            // ability.use(this, target);
+        int damage = Math.max(0, this.attack - target.defense);
+        target.health -= damage;
+            if (canUseAbility()) {
             mana -= abilityPower;
             System.out.println(this.name + " used the ability " + ability + " on " + target.name + " .");
         }

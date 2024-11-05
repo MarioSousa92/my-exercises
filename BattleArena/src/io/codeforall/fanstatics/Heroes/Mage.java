@@ -6,7 +6,7 @@ public class Mage extends Hero {
 
     public Mage() {
         super(200,
-                100,
+                150,
                 100,
                 20,
                 "Merlin",

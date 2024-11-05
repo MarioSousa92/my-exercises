@@ -6,7 +6,7 @@ public class Warrior extends Hero {
 
     public Warrior() {
         super(200,
-                100,
+                150,
                 90,
                 40,
                 "Baba",

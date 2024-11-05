@@ -6,7 +6,7 @@ public class Cleric extends Hero {
 
     public Cleric() {
         super(200,
-                100,
+                150,
                 85,
                 30,
                 "Pope",
