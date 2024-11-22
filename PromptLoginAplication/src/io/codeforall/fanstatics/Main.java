@@ -21,7 +21,7 @@ import org.academiadecodigo.bootcamp.scanners.string.StringInputScanner;
             String username = prompt.getUserInput(question1);
             String password = prompt.getUserInput(question2);
 
-            if(username.equals("lhugens") && password.equals("cenas")){
+            if(username.equals("mariosousa92") && password.equals("b00tc@mp2024")){
                 System.out.println("\nLogin Successful!\nWelcome home, " + username + "!");
             } else {
                 System.out.println("\nWrong Credentials! Exiting...");
