@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Javabank.css">
+</head>
+<body>
+    <header>
+        <h1>JavaBank</h1>
+        <div class="customerManagement">
+            <h3>Customer Management</h3>
+            <div class="formcustomerman">
+                <ul class="identity">
+                    <li class="firstnametitle">First Name </li>
+                    <li class="lastnametitle">Last Name</li>
+                    <li class="emailtitle">Email</li>
+                    <li class="phonetitle">Phone</li>
+                </ul>
+                <ul class="form">
+                    <li><input type="text" name="First Name" id="fname" placeholder="First Name"></li>
+                    <li><input type="text" name="" id="lname" placeholder="Last Name"></li>
+                    <li><input type="email" name="" id="emailname" placeholder="email"></li>
+                    <li><input type="number" name="" id="numbername" placeholder="Phone"></li>
+                </ul>
+                <div class="buttons_form">
+                    <button>Add</button>
+                    <button>Update</button>
+                    <button>Reset</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <h3>List of Customers:</h3>
+        <div id="List">
+            <div class="rowlist">
+                <div class="fnamelist">Rui</div>
+                <div class="lnamelist">Ferrão</div>
+                <div class="emailist">mail@mail.pt</div>
+                <div class="phonelist">961 111 111</div>
+                <div class="editlist"><button>Edit</button></div>
+                <div class="deletelist"><button>Delete</button></div>
+            </div>
+        </div>
+    </section>
+    <script src="/js/script.js"></script>
+</body>
+</html>

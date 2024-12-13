@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    background-color: #EEEEEE;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    margin: 2% 0;
+    border: 1px solid #E8E8E8;
+    padding: 1%;
+}
+li{
+    width: 25%;
+}
+li input{
+    border: 1px solid gray;
+    border-radius: 3px;
+    background-color: #FFF;
+}
+
+body{
+    width: 80%;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}
+
+header>h1{
+    text-align: center;
+    margin: 10px 0px;
+}
+header h3, section h3{
+    color: #31708F;
+}
+
+.buttons_form{
+    margin: 0 1%;
+}
+
+.formcustomerman{
+    margin-bottom: 5%;
+    border: 1px solid #E8E8E8;
+    padding: 2%;
+}
+
+button{
+    color: #FFF;
+    border-radius: 2px;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+
+}
+
+.btadd{
+    background-color: #56B155;
+}
+
+.btupdate{
+    background-color: #3071AA;
+}
+
+.btreset{
+    background-color: #EEA53D;
+}
+.editlists{
+    background-color: #56B155;
+}
+.deletelists{
+    background-color: #D34B47;
+}
+
+.rowlist{
+    display: flex;
+    margin: 2% 1%;
+}
+.rowlist>div{
+    width: 20%;
+}
+.editlist, .deletelist{
+    text-align: center;
+}
+.rowlist div{
+    border: 1px solid #E8E8E8;
+    padding: 1%;
+    background-color: #FFF;
+}
