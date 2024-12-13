@@ -2,11 +2,16 @@ document.addEventListener('DOMContentLoaded', function () {
     let listapifield = "";
     url = "http://localhost:8080/javabank5/api/customer"
 
-    function getData(url) {
-        fetch(url)
-            .then((response) => response.json())
-            .then((data) => renderhtml(data))
-            .catch((error) => console.error(error));
+    async function getData(url) {
+
+        const response = await fetch(url);
+        const data = await response.json();
+
+        renderhtml(data)
+        //fetch(url)
+          //  .then((response) => response.json())
+            //.then((data) => renderhtml(data))
+            //.catch((error) => console.error(error));
     }
 
     getData(url);
@@ -18,7 +23,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         for (let i = 0; i < data.length; i++) {
 
-            listapifield += '<div class="rowlist"><div class="fnamelist">' + data[i].firstName + '</div><div class="lnamelist">' + data[i].lastName + '</div><div class="emailist">' + data[i].email + '</div><div class="phonelist">' + data[i].phone + '</div><div class="editlist"><button class="editlists">Edit</button></div><div class="deletelist"><button class="deletelists">Delete</button></div></div>';
+            listapifield += '<div class="rowlist"><div class="fnamelist">' 
+            + data[i].firstName + '</div><div class="lnamelist">' + data[i].lastName + 
+            '</div><div class="emailist">' + data[i].email + '</div><div class="phonelist">' 
+            + data[i].phone + '</div><div class="editlist"><button class="editlists">Edit</button></div>'+
+            '<div class="deletelist"><button class="deletelists">Delete</button></div></div>';
         }
 
         htmldinamic.innerHTML = listapifield;
